@@ -20,6 +20,7 @@ class Node {
 			var n = new Node(item,null)
 			this.next = n
 			n.next = null
+			console.log(item + " added")
 		}
 		else { 
 			this.next.add(item)
@@ -36,14 +37,14 @@ class Node {
 			console.log("Not found!")
 		}
 
-	delete(item) {
+	remove(item) {
 		if (this.next != null) 
 			if (this.key === item) {
 				this.key = item.next
 				console.log("Item deleted")
 			}
 			else {
-				this.next.delete(item)
+				this.next.remove(item)
 			}
 		
 		}
@@ -58,6 +59,6 @@ root.add(7)
 root.add(9)
 root.search(7) // Found!
 root.search(11) // Not found!
-root.delete(7) 
+root.remove(7) 
 root.search(7) // Not found!
 root.print() // 8 5 6 9 
